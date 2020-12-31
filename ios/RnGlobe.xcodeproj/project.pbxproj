@@ -20,9 +20,9 @@
 		62527C08C6361C021C4D1370 /* libPods-RnGlobe-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E5F343580AC583AA2E05B9 /* libPods-RnGlobe-tvOS.a */; };
 		714EA9206740E635BC411BE2 /* libPods-RnGlobe-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CC5ABFEE0B79360DFC06E6 /* libPods-RnGlobe-tvOSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		955D31C6259CA4F300DB85E2 /* Globe.obj in Resources */ = {isa = PBXBuildFile; fileRef = 955D31C5259CA4F300DB85E2 /* Globe.obj */; };
 		958E1C4F259C7B4900F58CEC /* Clo-uds.png in Resources */ = {isa = PBXBuildFile; fileRef = 958E1C4E259C7B4900F58CEC /* Clo-uds.png */; };
 		958E1C5B259C806300F58CEC /* albedo_defuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 958E1C5A259C806300F58CEC /* albedo_defuse.png */; };
-		959D8EE1259C719B004B8086 /* globe.obj in Resources */ = {isa = PBXBuildFile; fileRef = 959D8EE0259C719B004B8086 /* globe.obj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +64,9 @@
 		79BF150430CFC6585DCF9243 /* libPods-RnGlobe-RnGlobeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RnGlobe-RnGlobeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RnGlobe/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89D49BB31C140FFA6A1DDFD2 /* Pods-RnGlobe-RnGlobeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnGlobe-RnGlobeTests.release.xcconfig"; path = "Target Support Files/Pods-RnGlobe-RnGlobeTests/Pods-RnGlobe-RnGlobeTests.release.xcconfig"; sourceTree = "<group>"; };
+		955D31C5259CA4F300DB85E2 /* Globe.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Globe.obj; sourceTree = "<group>"; };
 		958E1C4E259C7B4900F58CEC /* Clo-uds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clo-uds.png"; sourceTree = "<group>"; };
 		958E1C5A259C806300F58CEC /* albedo_defuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = albedo_defuse.png; sourceTree = "<group>"; };
-		959D8EE0259C719B004B8086 /* globe.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = globe.obj; sourceTree = "<group>"; };
 		963657B6CDB1886158410F34 /* Pods-RnGlobe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnGlobe.release.xcconfig"; path = "Target Support Files/Pods-RnGlobe/Pods-RnGlobe.release.xcconfig"; sourceTree = "<group>"; };
 		9DCF5D0EB7393515D97886A8 /* Pods-RnGlobe-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnGlobe-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-RnGlobe-tvOSTests/Pods-RnGlobe-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		B84CC345E31CA894B7360238 /* Pods-RnGlobe-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnGlobe-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RnGlobe-tvOSTests/Pods-RnGlobe-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -207,9 +207,9 @@
 		95A6B6C0259C57170066D270 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				955D31C5259CA4F300DB85E2 /* Globe.obj */,
 				958E1C5A259C806300F58CEC /* albedo_defuse.png */,
 				958E1C4E259C7B4900F58CEC /* Clo-uds.png */,
-				959D8EE0259C719B004B8086 /* globe.obj */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -358,8 +358,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				958E1C5B259C806300F58CEC /* albedo_defuse.png in Resources */,
+				955D31C6259CA4F300DB85E2 /* Globe.obj in Resources */,
 				958E1C4F259C7B4900F58CEC /* Clo-uds.png in Resources */,
-				959D8EE1259C719B004B8086 /* globe.obj in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

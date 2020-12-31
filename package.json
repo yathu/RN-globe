@@ -13,7 +13,8 @@
     "react": "16.13.1",
     "react-globe": "^5.0.2",
     "react-native": "0.63.4",
-    "react-native-gl-model-view": "^1.6.0"
+    "react-native-gl-model-view": "^1.6.0",
+    "three": "^0.124.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

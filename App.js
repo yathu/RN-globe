@@ -11,6 +11,7 @@ import {
 import ModelView from 'react-native-gl-model-view';
 const AnimatedModelView = Animated.createAnimatedComponent(ModelView);
 import ReactGlobe from 'react-globe';
+import THREE from 'three';
 
 export default class App extends Component {
   constructor() {
@@ -56,12 +57,12 @@ export default class App extends Component {
     );
   };
 
-  componentWillMount() {
-    this.panResponder = PanResponder.create({
-      onMoveShouldSetPanResponder: () => true,
-      onPanResponderMove: this.handlePanResponderMove.bind(this),
-    });
-  }
+  // componentWillMount() {
+  //   this.panResponder = PanResponder.create({
+  //     onMoveShouldSetPanResponder: () => true,
+  //     onPanResponderMove: this.handlePanResponderMove.bind(this),
+  //   });
+  // }
 
   handlePanResponderMove(e, gestureState) {
     const {dx, dy} = gestureState;
@@ -72,14 +73,37 @@ export default class App extends Component {
     });
   }
 
+  SimpleGlobe = () => {
+    return <ReactGlobe />;
+  };
+
   render() {
     let {rotateZ, rotateX, fromXY} = this.state;
 
     return (
       <SafeAreaView style={{flex: 1}}>
         {/* {this.renderChildren()} */}
-
         <AnimatedModelView
+          model={{
+            uri: 'Globe.obj',
+          }}
+          // model={ReactGlobe}
+          texture={{
+            uri: 'albedo_defuse.png',
+          }}
+          // texture={ReactGlobe}
+          onStartShouldSetResponder={() => true}
+          onResponderRelease={this.onMoveEnd}
+          onResponderMove={this.onMove}
+          animate={!!fromXY}
+          tint={{r: 1.0, g: 1.0, b: 1.0, a: 1.0}}
+          scale={0.2}
+          rotateX={rotateX}
+          rotateZ={rotateZ}
+          translateZ={-4}
+          style={styles.container}
+        />
+        {/* <AnimatedModelView
           model={{
             // uri: 'demon.model',
             uri: 'globe.obj',
@@ -98,7 +122,7 @@ export default class App extends Component {
           translateZ={-4}
           style={styles.container}
           // children={this.renderChildren()}
-        />
+        /> */}
       </SafeAreaView>
     );
   }
