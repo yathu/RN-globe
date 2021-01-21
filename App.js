@@ -8,10 +8,16 @@ import {
   PanResponder,
 } from 'react-native';
 
+import Svg, {Path, Circle, Rect, Image} from 'react-native-svg';
+
 import ModelView from 'react-native-gl-model-view';
 const AnimatedModelView = Animated.createAnimatedComponent(ModelView);
 import ReactGlobe from 'react-globe';
 import THREE from 'three';
+var RNFS = require('react-native-fs');
+import RNFetchBlob from 'rn-fetch-blob';
+
+import {WebView} from 'react-native-webview';
 
 export default class App extends Component {
   constructor() {
@@ -57,12 +63,12 @@ export default class App extends Component {
     );
   };
 
-  // componentWillMount() {
-  //   this.panResponder = PanResponder.create({
-  //     onMoveShouldSetPanResponder: () => true,
-  //     onPanResponderMove: this.handlePanResponderMove.bind(this),
-  //   });
-  // }
+  componentWillMount() {
+    this.panResponder = PanResponder.create({
+      onMoveShouldSetPanResponder: () => true,
+      onPanResponderMove: this.handlePanResponderMove.bind(this),
+    });
+  }
 
   handlePanResponderMove(e, gestureState) {
     const {dx, dy} = gestureState;
@@ -77,21 +83,20 @@ export default class App extends Component {
     return <ReactGlobe />;
   };
 
+
   render() {
     let {rotateZ, rotateX, fromXY} = this.state;
+ 
 
     return (
       <SafeAreaView style={{flex: 1}}>
-        {/* {this.renderChildren()} */}
+
         <AnimatedModelView
           model={{
             uri: 'Globe.obj',
           }}
-          // model={ReactGlobe}
-          texture={{
-            uri: 'albedo_defuse.png',
-          }}
-          // texture={ReactGlobe}
+          texture={{uri: 'albedo_defuse.png'}}
+
           onStartShouldSetResponder={() => true}
           onResponderRelease={this.onMoveEnd}
           onResponderMove={this.onMove}
@@ -103,26 +108,6 @@ export default class App extends Component {
           translateZ={-4}
           style={styles.container}
         />
-        {/* <AnimatedModelView
-          model={{
-            // uri: 'demon.model',
-            uri: 'globe.obj',
-          }}
-          texture={{
-            uri: 'albedo_defuse.png',
-          }}
-          onStartShouldSetResponder={() => true}
-          onResponderRelease={this.onMoveEnd}
-          onResponderMove={this.onMove}
-          animate={!!fromXY}
-          tint={{r: 1.0, g: 1.0, b: 1.0, a: 1.0}}
-          scale={0.2}
-          rotateX={rotateX}
-          rotateZ={rotateZ}
-          translateZ={-4}
-          style={styles.container}
-          // children={this.renderChildren()}
-        /> */}
       </SafeAreaView>
     );
   }
@@ -132,6 +117,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'transparent',
+    // width: 200,
+    // height: 200,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
   },
   rotateView: {
     width: 100,
@@ -141,3 +132,4 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
   },
 });
+//s
